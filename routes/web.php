@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin_dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/admin_peminjaman', function () {
+    return view('admin.peminjaman');
+});
+
+Route::get('/admin_detail_peminjaman', function () {
+    return view('admin.detail_peminjaman');
+});
