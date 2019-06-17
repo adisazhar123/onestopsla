@@ -5,7 +5,7 @@
 @endsection
 
 @section('sidebar')
-    <title>Admin | Peminjaman</title>
+    <title>Admin | Complaints</title>
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon ml-0 mr-0 " style="width:100%">
@@ -27,12 +27,12 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="../admin_peminjaman">
         <i class="fas fa-fw fa-table"></i>
         <span>Manage Peminjaman</span></a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link" href="../admin_complaints">
         <i class="fas fa-fw fa-folder"></i>
         <span>Manage Complaints</span></a>
@@ -60,12 +60,12 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Manage Peminjaman</h1>        
+        <h1 class="h3 mb-0 text-gray-800">Manage Complaints</h1>        
     </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Permintaan Peminjaman</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Daftar Complaints</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -73,11 +73,11 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>No. Pengajuan</th>
+                        <th>No. Complaint</th>
                         <th>Nama Pengaju</th>
-                        <th>Tanggal Pengajuan</th>
-                        <th>Status</th>
-                        <th style="width: 25%">Pilihan</th>
+                        <th>Tanggal Complaint</th>
+                        <th>Subject</th>
+                        <th style="width: 15%">Pilihan</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -98,16 +98,9 @@
                         <td>1 Juni 2019</td>
                         <td>Belum diterima</td>
                         <td class="text-center">
-                            <a href="../admin_detail_peminjaman" class="btn btn-primary btn-icon-split">
+                            <a href="../admin_detail_complaint" class="btn btn-primary btn-icon-split">
                                 <span class="text"> <i class="fas fa-search"></i> Lihat Detail</span>
                             </a>
-                            <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="text"><i class="fas fa-check"></i> Terima</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="text"><i class="fas fa-times"></i> Tolak</span>
-                            </a>                 
-                        </td>
                     </tr>
                     <tr>
                         <td>2.</td>
@@ -118,13 +111,7 @@
                         <td class="text-center">
                             <a href="#" class="btn btn-primary btn-icon-split">
                                 <span class="text"> <i class="fas fa-search"></i> Lihat Detail</span>
-                            </a>
-                            <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="text"><i class="fas fa-check"></i> Terima</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="text"><i class="fas fa-times"></i> Tolak</span>
-                            </a>                    
+                            </a>                 
                         </td>
                     </tr>
                 </tbody>

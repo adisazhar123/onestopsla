@@ -26,3 +26,11 @@ Route::get('/admin_peminjaman', function () {
 Route::get('/admin_detail_peminjaman', function () {
     return view('admin.detail_peminjaman');
 });
+
+Route::get('/admin_complaints', function () {
+    return view('admin.complaints');
+});
+
+Route::get('/admin_detail_complaint', function () {
+    return view('admin.detail_complaint');
+});

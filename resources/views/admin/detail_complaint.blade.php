@@ -27,12 +27,13 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <li class="nav-item active">
+    <!-- Heading -->
+    <li class="nav-item">
         <a class="nav-link" href="../admin_peminjaman">
         <i class="fas fa-fw fa-table"></i>
         <span>Manage Peminjaman</span></a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link" href="../admin_complaints">
         <i class="fas fa-fw fa-folder"></i>
         <span>Manage Complaints</span></a>
@@ -61,12 +62,9 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <div>
-            <h1 class="h3 mb-0 text-gray-800">Detail Peminjaman</h1> 
-            <a href="../admin_peminjaman"><i class="fa fa-caret-left"></i> Kembali ke daftar peminjaman </a>    
-        </div> 
-        <button href="#" class="btn btn-danger btn-icon-split ml-1" disabled>
-            <span class="text"> Status: Belum diterima</span>
-        </button>             
+            <h1 class="h3 mb-0 text-gray-800">Detail Complaint</h1> 
+            <a href="../admin_complaints"><i class="fa fa-caret-left"></i> Kembali ke daftar complaint </a>    
+        </div>           
     </div>
        
     <!-- Earnings (Monthly) Card Example -->
@@ -76,10 +74,15 @@
     <div class="card shadow mb-4 mt-4">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <table class="table table-bordered" width="100%" cellspacing="0">
+                        <style>
+                            th{
+                                width: 30%;
+                            }
+                        </style> 
                         <tr>
-                            <th>Nomor Pengajuan</th>
+                            <th>Nomor Complaint</th>
                             <td>11111</td>
                         </tr>
                         <tr>
@@ -87,60 +90,22 @@
                             <td>Nama Pengaju 1</td>
                         </tr>
                         <tr>
-                            <th>Tanggal Pengajuan</th>
+                            <th>Tanggal Complaint</th>
                             <td>1 Juni 2019</td>
                         </tr>
                         <tr>
-                            <th>Deskripsi</th>
-                            <td>Deskripsi</td>
+                            <th>Subject</th>
+                            <td>Subject</td>
                         </tr>
                         <tr>
                             <th>Jumlah Orang</th>
                             <td>15</td>
                         </tr>
                         <tr>
-                            <th>Tipe Penggunaan</th>
-                            <td>Penggunaan</td>
-                        </tr>
-                        <tr>
-                            <th>Tanggal Mulai Pinjam</th>
-                            <td>1 Juni 2019</td>
-                        </tr>
-                        <tr>
-                            <th>Tanggal Selesai Pinjam</th>
-                            <td>10 Juni 2019</td>
+                            <th>Deskripsi</th>
+                            <td>Deskripsi complaint</td>
                         </tr>
                     </table>
-                </div>
-                <div class="col-md-6">
-                    <h6> Item yang Dipinjam: </h6>
-                    <table class="table table-bordered" width="100%" cellspacing="0">
-                        <tr>
-                            <th>No.</th>
-                            <th>Nama Item</th>
-                            <th>Jumlah</th>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>Proyektor</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>Proyektor</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="#" class="btn btn-success btn-icon-split" data-toggle="modal" data-target="#acceptModal">
-                        <span class="text"><i class="fas fa-check"></i> Terima</span>
-                    </a>
-                    <a href="#" class="btn btn-danger btn-icon-split ml-1" data-toggle="modal" data-target="#declineModal">
-                        <span class="text"><i class="fas fa-times"></i> Tolak</span>
-                    </a> 
                 </div>
             </div>
         </div>
