@@ -34,3 +34,14 @@ Route::get('/admin_complaints', function () {
 Route::get('/admin_detail_complaint', function () {
     return view('admin.detail_complaint');
 });
+
+
+//Items Route
+//TODO: Add middleware
+
+//Route::prefix('admin')->group(function() {
+
+    Route::post('items', 'ItemsController@createItem');
+    Route::put('items/{id}', 'ItemsController@updateItem');
+//
+//});

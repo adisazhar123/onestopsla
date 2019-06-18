@@ -32,7 +32,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @param int $id
      * @return bool
      */
-    public function update(array $attributes, int $id) : bool
+    public function update(array $attributes, $id) : bool
     {
         return $this->find($id)->update($attributes);
     }
@@ -50,7 +50,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @param int $id
      * @return mixed
      */
-    public function find(int $id)
+    public function find($id)
     {
         return $this->model->find($id);
     }
@@ -59,7 +59,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @return mixed
      * @throws ModelNotFoundException
      */
-    public function findOneOrFail(int $id)
+    public function findOneOrFail($id)
     {
         return $this->model->findOrFail($id);
     }
@@ -112,7 +112,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @param int $id
      * @return bool
      */
-    public function delete(int $id) : bool
+    public function delete($id) : bool
     {
         return $this->model->find($id)->delete();
     }
