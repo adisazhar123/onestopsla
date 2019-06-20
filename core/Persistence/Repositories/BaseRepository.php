@@ -42,7 +42,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @param string $sortBy
      * @return mixed
      */
-    public function all($columns = array('*'), string $orderBy = 'id', string $sortBy = 'asc')
+    public function all($columns = array('*'), $orderBy = 'id', $sortBy = 'asc')
     {
         return $this->model->orderBy($orderBy, $sortBy)->get($columns);
     }

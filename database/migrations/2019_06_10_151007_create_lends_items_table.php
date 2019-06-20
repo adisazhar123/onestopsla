@@ -13,10 +13,10 @@ class CreateLendsItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lends_items', function (Blueprint $table) {
+        Schema::create('item_lend', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('lends_id');
-            $table->unsignedBigInteger('items_id');
+            $table->unsignedBigInteger('lend_id');
+            $table->unsignedBigInteger('item_id');
             $table->timestamps();
         });
     }

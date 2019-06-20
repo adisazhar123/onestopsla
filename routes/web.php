@@ -19,13 +19,16 @@ Route::get('/admin_dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/admin_peminjaman', function () {
-    return view('admin.peminjaman');
+Route::prefix('admin')->group(function() {
+    Route::get('/peminjaman', 'PagesController@adminLendsPage')->name('admin.manage.lends');
+
+    Route::get('detail_peminjaman', function () {
+        return view('admin.detail_peminjaman');
+    });
 });
 
-Route::get('/admin_detail_peminjaman', function () {
-    return view('admin.detail_peminjaman');
-});
+
+
 
 Route::get('/admin_complaints', function () {
     return view('admin.complaints');
@@ -40,8 +43,18 @@ Route::get('/admin_detail_complaint', function () {
 //TODO: Add middleware
 
 //Route::prefix('admin')->group(function() {
-
+    Route::get('items', 'ItemsController@allItems');
+    Route::get('available-items', 'ItemsController@getAvailableItems');
     Route::post('items', 'ItemsController@createItem');
     Route::put('items/{id}', 'ItemsController@updateItem');
 //
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::prefix('peminjam')->group(function() {
+   Route::get('barang', 'PeminjamsController@getAvailableAllItems');
+});

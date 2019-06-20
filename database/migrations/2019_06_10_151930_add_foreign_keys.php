@@ -28,10 +28,10 @@ class AddForeignKeys extends Migration
                 ->on('users');
         });
 
-        Schema::table('lends_items', function(Blueprint $table) {
-            $table->foreign('lends_id')->references('id')
+        Schema::table('item_lend', function(Blueprint $table) {
+            $table->foreign('lend_id')->references('id')
                 ->on('lends');
-            $table->foreign('items_id')->references('id')
+            $table->foreign('item_id')->references('id')
                 ->on('items');
         });
 

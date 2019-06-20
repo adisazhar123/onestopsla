@@ -20,7 +20,6 @@ class CreateLendsTable extends Migration
             $table->string('item_type', 255);
             $table->dateTime('start_date_time');
             $table->dateTime('end_date_time');
-            $table->integer('individuals_quantity')->nullable();
             $table->string('usage_type', 255);
             $table->string('controlled_by', 255);
             $table->string('status')->default('pending');
