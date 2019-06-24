@@ -68,4 +68,9 @@ class ItemsRepository extends BaseRepository implements ItemsRepositoryInterface
 
         return $items;
     }
+
+    public function searchNumerousItems(array $items)
+    {
+        return $this->whereIn('id', $items);
+    }
 }

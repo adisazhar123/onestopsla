@@ -6,7 +6,7 @@ namespace OneStopSla\Core\Persistence\UseCases;
 
 use OneStopSla\Core\Domain\Repositories\ItemsRepositoryInterface;
 
-class AllItemsUseCase
+class GetAllItemsUseCase
 {
     protected $itemsRepo;
 

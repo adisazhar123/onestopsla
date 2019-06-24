@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => OnestopSla\Core\Domain\Models\User::class,
+            'model' => OneStopSla\Core\Domain\Models\User::class,
         ],
 
         // 'users' => [

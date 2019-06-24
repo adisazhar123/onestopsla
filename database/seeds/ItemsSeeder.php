@@ -37,17 +37,30 @@ class ItemsSeeder extends Seeder
 
         for ($j=1; $j<=10; $j++)
         {
-            DB::table('users')->insert([
-                'name' => $faker->name,
-                'email' => $faker->email,
-                'password' => bcrypt('secret'),
-                'nip' => $faker->bankAccountNumber,
-                'role' => 'Employee'
-            ]);
+            if ($j % 2) {
+                DB::table('users')->insert([
+                    'name' => $faker->name,
+                    'email' => $faker->email,
+                    'password' => bcrypt('secret'),
+                    'nip' => $faker->bankAccountNumber,
+                    'role' => 'Employee'
+                ]);
+
+            } else {
+                DB::table('users')->insert([
+                    'name' => $faker->name,
+                    'email' => $faker->email,
+                    'password' => bcrypt('secret'),
+                    'nip' => $faker->bankAccountNumber,
+                    'role' => 'Admin'
+                ]);
+            }
         }
 
         Lend::create([
             'users_id' => 1,
+            'name' => $faker->name,
+            'nip' => $faker->creditCardNumber(),
             'description' => $faker->realText(),
             'item_type' => 'Vehicle',
             'start_date_time' => \Carbon\Carbon::create('2019-06-15 04:28:49'),
@@ -59,6 +72,8 @@ class ItemsSeeder extends Seeder
 
         Lend::create([
             'users_id' => 2,
+            'name' => $faker->name,
+            'nip' => $faker->creditCardNumber(),
             'description' => $faker->realText(),
             'item_type' => 'Vehicle',
             'start_date_time' => \Carbon\Carbon::create('2019-06-15 04:28:49'),
@@ -70,6 +85,8 @@ class ItemsSeeder extends Seeder
 
         Lend::create([
             'users_id' => 3,
+            'name' => $faker->name,
+            'nip' => $faker->creditCardNumber(),
             'description' => $faker->realText(),
             'item_type' => 'Vehicle',
             'start_date_time' => \Carbon\Carbon::create('2019-06-18 04:28:49'),
@@ -81,6 +98,8 @@ class ItemsSeeder extends Seeder
 
         Lend::create([
             'users_id' => 5,
+            'name' => $faker->name,
+            'nip' => $faker->creditCardNumber(),
             'description' => $faker->realText(),
             'item_type' => 'Vehicle',
             'start_date_time' => \Carbon\Carbon::create('2019-06-18 04:28:49'),

@@ -1,10 +1,14 @@
-@extends('layouts.admin_dashboard')
+@extends('layouts.peminjam_dashboard')
 
 @section('css.ext')
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
     <style>
     </style>
+@endsection
+
+@section('nav-barang')
+    active
 @endsection
 
 @section('sidebar')
@@ -34,7 +38,7 @@
         </div>
         <div class="card-body">
 
-            <form action="/peminjam/barang" class="search-bar mb-3">
+            <form action="/peminjam" class="search-bar mb-3">
                 <h3>Pencarian</h3>
                 <div class="form-row">
                     <div class="col-md-4">
@@ -62,8 +66,14 @@
 
             <div class="items">
                 <div class="row">
+                    @if($items->isEmpty())
+                        <div class="col-md-12">
+                            <p>Barang tidak ditemukan.</p>
+                        </div>
+                    @endif
+
                     @foreach($items as $item)
-                        <div class="col-md-3 mb-3">
+                        <div class="col-sm-4 col-md-3 mb-3">
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5>{{$item->title}}</h5>
@@ -76,6 +86,11 @@
                                         <strong>Jumlah yang tersedia:</strong>
                                         {{$item->quantity_available}}
                                     </h6>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-warning add-keranjang" item_id={{$item->id}}>
+                                        Tambahkan ke keranjang peminjaman
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -93,4 +108,31 @@
     <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $(".add-keranjang").click(async function () {
+               const itemId = $(this).attr('item_id');
+               let response;
+
+               try {
+                   response = await $.ajax({
+                      url: '{{url('peminjam/add-items-to-keranjang')}}',
+                      data: {item: itemId}
+                   });
+               } catch (e) {
+                   console.log(e);
+                   alertify.success("Barang gagal ditambahkan ke keranjang! Mohon untuk refresh halaman.");
+                   return false;
+               }
+
+               console.log(response);
+
+               alertify.success("Barang berhasil ditambahkan ke keranjang!");
+
+            });
+
+        });
+    </script>
 @endsection

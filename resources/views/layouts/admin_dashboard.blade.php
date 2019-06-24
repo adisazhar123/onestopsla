@@ -18,6 +18,10 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+    <link rel="stylesheet" href="{{asset('vendor/alertifyjs/css/alertify.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/alertifyjs/css/themes/bootstrap.css')}}">
+
     @yield('css.ext')
 
 </head>
@@ -52,6 +56,18 @@
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Keranjang Peminjaman</span>
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque, beatae debitis dolore ducimus et fuga iste minus molestias nemo perferendis quas quisquam quo quod repellat? Harum illum laboriosam quod.
+                        </p>
+                    </div>
+                </li>
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,13 +166,16 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+{{--    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>--}}
 
-    <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+{{--    <!-- Page level custom scripts -->--}}
+{{--    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>--}}
+{{--    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>--}}
+
+    <script src="{{asset('vendor/alertifyjs/alertify.js')}}"></script>
     
     @yield('script.ext')
+
 
 </body>
 

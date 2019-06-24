@@ -1,5 +1,5 @@
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/peminjam">
     <div class="sidebar-brand-icon ml-0 mr-0 " style="width:100%">
         <img src={{asset('img/logoBI2.png')}} style="width: 30%" alt="logo">
     </div>
@@ -8,21 +8,26 @@
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
-<!-- Nav Item - Dashboard -->
-<li class="nav-item ">
-    <a class="nav-link" href="/peminjam">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
 
 <!-- Heading -->
-<li class="nav-item active">
-    <a class="nav-link" href="/peminjam/barang">
+<li class="nav-item @yield('nav-barang')">
+    <a class="nav-link" href="/peminjam">
         <i class="fas fa-fw fa-table"></i>
         <span>Cek Ketersediaan Barang</span>
+    </a>
+</li>
+
+<li class="nav-item @yield('nav-keranjang')">
+    <a class="nav-link" href="/peminjam/keranjang">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Keranjang Peminjaman</span>
+    </a>
+</li>
+
+<li class="nav-item @yield('nav-history-peminjaman')">
+    <a class="nav-link" href="/peminjam/history-peminjaman">
+        <i class="fas fa-fw fa-table"></i>
+        <span>History Peminjaman</span>
     </a>
 </li>
 

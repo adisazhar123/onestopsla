@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use OneStopSla\Core\Domain\Models\Item;
 use OneStopSla\Core\Domain\Models\Lend;
-use OneStopSla\Core\Persistence\UseCases\AllItemsUseCase;
+use OneStopSla\Core\Persistence\UseCases\GetAllItemsUseCase;
 use OneStopSla\Core\Persistence\UseCases\AvailableItemsUseCase;
 use OneStopSla\Core\Persistence\UseCases\CreateItemUseCase;
 use OneStopSla\Core\Persistence\UseCases\UpdateItemUseCase;
@@ -21,7 +21,7 @@ class ItemsController extends Controller
     protected $allItemsUc;
     protected $availableItemsUc;
 
-    public function __construct(CreateItemUseCase $createItemUc, UpdateItemUseCase $updateItemUc, AllItemsUseCase $allItemsUc, AvailableItemsUseCase $availableItemsUc)
+    public function __construct(CreateItemUseCase $createItemUc, UpdateItemUseCase $updateItemUc, GetAllItemsUseCase $allItemsUc, AvailableItemsUseCase $availableItemsUc)
     {
         $this->createItemUc = $createItemUc;
         $this->updateItemUc = $updateItemUc;

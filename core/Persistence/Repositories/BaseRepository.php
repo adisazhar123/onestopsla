@@ -116,4 +116,28 @@ abstract class BaseRepository implements BaseRepositoryInterface
     {
         return $this->model->find($id)->delete();
     }
+
+    public function whereIn($column, array $ids)
+    {
+        return $this->model->whereIn($column, $ids)->get();
+    }
+
+    public function with(array $relations)
+    {
+        $this->model = $this->model->with($relations);
+
+        return $this;
+    }
+
+    public function get()
+    {
+        return $this->model->get();
+    }
+
+    public function where(array $attributes)
+    {
+        $this->model = $this->model->where($attributes);
+
+        return $this;
+    }
 }
